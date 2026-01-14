@@ -50,17 +50,17 @@ def animate_ising():
     
 
     img = ax.imshow(model.grid, cmap='coolwarm', interpolation='nearest')
-    plt.axis('off') # Hide axes for cleaner look
+    plt.axis('off') #Hides Axes (change if unwanted)
 
     def update(frame):
 
         model.step()
         
-        # Update the image data
+        #Update Image data (is this the fastest way?)
         img.set_data(model.grid)
         return img,
 
-    # Create Animation
+    #Animate Plot
     ani = animation.FuncAnimation(fig, update, frames=200, interval=50, blit=True)
     
     plt.show()
